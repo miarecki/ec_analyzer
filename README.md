@@ -3,7 +3,7 @@
 ## Description
 Elliptic Curve Analyzer is a Python application developed with customtkinter designed for plotting elliptic curves in Weierstrass form and calculating various quantities. This simple yet powerful tool serves as a practical component of my bachelor's thesis on "Elliptic Curves and Cryptography".
 
-![Elliptic Curve Analyzer Screenshot](ec_analyzer/sc/screenshot.png)
+![Elliptic Curve Analyzer Screenshot](/sc/screenshot.png)
 
 ## Features
 - Plotting elliptic curves in Weierstrass form.
