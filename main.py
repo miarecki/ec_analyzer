@@ -122,6 +122,14 @@ class App(customtkinter.CTk):
 		self.v_start_label.place(x=50, y=650)
 		self.v_stop_label.place(x=230, y=650)
 
+		# example of addition button
+		self.addex_button = customtkinter.CTkButton(self.plot_frame, width=70, height=35, font=('Segoe', 14), text='Definition of addition', command=self.add_example)
+		self.addex_button.place(x=400, y=600)
+
+		# example of doubling button
+		self.dupe_button = customtkinter.CTkButton(self.plot_frame, width=70, height=35, font=('Segoe', 14), text='Definition of doubling', command=self.double_example)
+		self.dupe_button.place(x=400, y=650)
+
 	def analize_event(self):
 		self.results_textbox.configure(state = 'normal')
 		self.results_textbox.delete("0.0", "end")
@@ -179,6 +187,38 @@ class App(customtkinter.CTk):
 			# Save the current figure to the specified file path
 			self.figure.savefig(file_path, format='png')
 			messagebox.showinfo("Save Successful", "Plot saved successfully!")
+
+	def add_example(self):
+
+			u_start = -4
+			u_stop = 4
+			v_start = -4
+			v_stop = 4
+
+			self.figure.clf()
+
+			plot = EllipticCurvePlotter("", u_start, u_stop, v_start, v_stop, self.figure, self.plot_canvas)
+			plot.plot_general_add()
+
+			self.save_button.configure(state='normal')
+
+
+	def double_example(self):
+
+			u_start = -4
+			u_stop = 4
+			v_start = -4
+			v_stop = 4
+
+			self.figure.clf()
+
+			plot = EllipticCurvePlotter("", u_start, u_stop, v_start, v_stop, self.figure, self.plot_canvas)
+			plot.plot_general_double()
+
+			self.save_button.configure(state='normal')
+
+
+
 
 if __name__ == '__main__':
 	app = App()
